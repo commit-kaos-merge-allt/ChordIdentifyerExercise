@@ -1,0 +1,60 @@
+﻿@page "/"
+
+<h1>tjennÂ^ 📈</h1>
+@if (ChordInput is null)
+{
+    <h4>Loading...</h4>
+}
+else
+{
+    <div class="guitar-container">
+        <div class="guitar-thing">
+            @for (int i = 0; i < 6; i++)
+            {
+                var y = i;
+                <div class="open" @onclick="@(() => Check(y, 0))">O</div>
+            }
+        </div>
+        <div class="guitar-split"></div>
+
+        <div class="guitar-frets">
+            @for (int i = 1; i <= 3; i++)
+            {
+                var x = i;
+                <div class="guitar-frets-row">
+                    @for (int j = 0; j < 6; j++)
+                    {
+                        var y = j;
+                        <div class="fret" @onclick="@(() => Check(y, x))">O</div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    private bool[,] ChordInput { get; set; }
+
+    protected override void OnInitialized()
+    {
+        ChordInput = new bool[6, 4];
+    }
+
+    private void Check(int y, int x)
+    {
+        ChordInput[y, x] = !ChordInput[y, x];
+
+        for (int i = 0; i < ChordInput.GetLength(0); i++)
+        {
+            for (int j = 0; j < ChordInput.GetLength(1); j++)
+            {
+                Console.Write($"{ChordInput[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+        Console.WriteLine();
+
+    }
+}

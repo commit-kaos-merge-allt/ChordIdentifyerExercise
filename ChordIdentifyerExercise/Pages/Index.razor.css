@@ -1,0 +1,36 @@
+﻿.guitar-container {
+    background-color: saddlebrown;
+    display: flex;
+    flex-direction: row;
+}
+
+.guitar-thing {
+    height: 100%;
+    display: flex;
+    align-content: space-around;
+    flex-direction: column;
+}
+
+.open {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+}
+
+.guitar-split {
+    background-color: #4b270d;
+    width: 1rem;
+}
+
+.guitar-frets {
+    display: flex;
+    flex-direction: row;
+}
+
+.fret {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1rem;
+}
