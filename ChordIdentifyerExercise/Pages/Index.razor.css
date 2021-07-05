@@ -2,7 +2,50 @@
     background-color: saddlebrown;
     display: flex;
     flex-direction: row;
+    position: relative;
+    border-radius: 10px 10px;
 }
+
+.guitar-string {
+    position: absolute;
+    height: 0.5rem;
+    width: 100%;
+    background-color: #2e2e2e;
+}
+
+.guitar-string:nth-child(1) {
+    top: 7%;
+}
+
+.guitar-string:nth-child(2) {
+    top: 24%;
+}
+
+.guitar-string:nth-child(3) {
+    top: 41%;
+}
+
+.guitar-string:nth-child(4) {
+    top: 57.5%;
+}
+
+.guitar-string:nth-child(5) {
+    top: 74%;
+}
+
+.guitar-string:nth-child(6) {
+    top: 90.5%;
+}
+
+/*.guitar-container:before {
+    content: "";
+    display: block;
+    height: 0.4rem;
+    width: 100%;
+    background-color: green;
+    top: 1.5rem;
+    position: absolute;
+}*/
 
 .guitar-thing {
     height: 100%;
@@ -16,6 +59,7 @@
     justify-content: center;
     align-content: center;
     padding: 1rem;
+    z-index: 90;
 }
 
 .guitar-split {
@@ -26,6 +70,7 @@
 .guitar-frets {
     display: flex;
     flex-direction: row;
+    z-index: 1000;
 }
 
 .fret {
